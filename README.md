@@ -59,3 +59,6 @@ Recommended threshold: 0.2 — optimized for recall since missing a real
 failure is more costly than a false alarm in predictive maintenance.
 
 ## Dependencies
+```
+pip install pandas numpy scikit-learn pgmpy scipy seaborn matplotlib openpyxl
+```
