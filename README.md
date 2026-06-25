@@ -19,9 +19,12 @@ preprocessing requirements.
 
 **Step 1 — Define Alarm Features**
 For each alarm, two features are extracted per time window:
-- Alarm Count: None (0), Low (1-2), Medium (3-5), High (>5)
-- Alarm Duration: None (0), Short (1-30s), Medium (31-300s), Long (>300s)
-Note: Duration thresholds were adjusted based on the actual data distribution.
+
+Alarm Count:
+- None (0), Low (1-2), Medium (3-5), High (>5)
+
+Alarm Duration (adjusted based on actual data distribution):
+- None (0), Short (1-10s), Medium (11-75s), Long (>75s)
 
 **Step 2 — Define Prediction Target**
 State ∈ {Running, Failure}
@@ -30,7 +33,7 @@ probability that the machine will be in Failure state during the next
 time window.
 
 **Step 3 — Generate Training Transitions**
-Generate consecutive window pairs (W_t, W_t+1) for DBN training. 
+Generate consecutive window pairs (W_t, W_t+1) for DBN training.
 Missing windows are reconstructed as quiet Running periods to preserve 
 the Markovian assumption.
 
